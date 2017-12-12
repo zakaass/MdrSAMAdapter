@@ -135,6 +135,9 @@ public class Send extends WmAdapterService {
                 //closeIfTransientConnection(conn, socketChannel);
             }
         }
+        if(output.get("responseString").toString().equals("done")){
+            conn.destroy();
+        }
         return output;
     }
 
